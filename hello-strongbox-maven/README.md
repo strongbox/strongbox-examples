@@ -8,7 +8,7 @@ The key things each project needs to have are:
 
 * A `groupId` : A logical prefix where other similar projects reside.
 * A `artifactId` : The artifact's name.
-* A `version`: The version.
+* A `version`: The version of the artifact.
 * A `packaging` (optional, defaults to `jar`, if not specified): The packaging type (jar, war, etc...)
 * A `<repositories/>` section: Defines where to resolve dependencies from.
 * A `<distributionManagement/>` section: Defines where to deploy the artifact(s) produced by this build to.
@@ -20,5 +20,13 @@ This is the Maven configuration file used to define global settings, such as rem
 This file normally needs to reside under ~/.m2/ or C:\Users\youruser\.m2
 
 It is important to note that the `<repositories/>` and `<distributionManagement/>` sections in your `pom.xml` file always have an `<id/>`. This `<id/>` needs to match the `<id/>` of a corresponding `<server/>` in your `settings.xml` file.
+
+# How to deploy
+
+Execute the following command:
+
+    mvn clean deploy
+
+This will build the code and deploy it to Strongbox.
 
 
