@@ -17,7 +17,7 @@ The key things each project needs to have are:
 
 This is the Maven configuration file used to define global settings, such as remote repositories, preferred mirrors, proxy settings, repository credentials, etc.
 
-This file normally needs to reside under `~/.m2/` or `C:\Users\youruser\.m2\`.
+This file normally needs to reside under `~/.m2` or `C:\Users\youruser\.m2`.
 
 It is important to note that the `<repositories/>` and `<distributionManagement/>` sections in your `pom.xml` file always have an `<id/>`. This `<id/>` needs to match the `<id/>` of a corresponding `<server/>` in your `settings.xml` file.
 
