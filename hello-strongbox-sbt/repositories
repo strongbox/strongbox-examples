@@ -1,0 +1,4 @@
+[repositories]
+  local
+  my-ivy-proxy-releases: http://repo.company.com/ivy-releases/, [organization]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]
+  releases: http://localhost:48080/storages/storage0/releases/
