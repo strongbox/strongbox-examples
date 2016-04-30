@@ -29,7 +29,7 @@ Execute the following command:
 
 This will build the code and deploy it to Strongbox.
 
-    carlspring@linux-70e2:/java/opensource/carlspring/strongbox-examples/hello-strongbox-maven> mvn clean deploy
+    carlspring@linux-70e2:/home/carlspring/strongbox-examples/hello-strongbox-maven> mvn clean deploy
     [INFO] Scanning for projects...
     [INFO]                                                                         
     [INFO] ------------------------------------------------------------------------
@@ -37,20 +37,20 @@ This will build the code and deploy it to Strongbox.
     [INFO] ------------------------------------------------------------------------
     [INFO] 
     [INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ hello-strongbox-maven ---
-    [INFO] Deleting /java/opensource/carlspring/strongbox-examples/hello-strongbox-maven/target
+    [INFO] Deleting /home/carlspring/strongbox-examples/hello-strongbox-maven/target
     [INFO] 
     [INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ hello-strongbox-maven ---
     [WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
-    [INFO] skip non existing resourceDirectory /java/opensource/carlspring/strongbox-examples/hello-strongbox-maven/src/main/resources
+    [INFO] skip non existing resourceDirectory /home/carlspring/strongbox-examples/hello-strongbox-maven/src/main/resources
     [INFO] 
     [INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ hello-strongbox-maven ---
     [INFO] Changes detected - recompiling the module!
     [WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
-    [INFO] Compiling 1 source file to /java/opensource/carlspring/strongbox-examples/hello-strongbox-maven/target/classes
+    [INFO] Compiling 1 source file to /home/carlspring/strongbox-examples/hello-strongbox-maven/target/classes
     [INFO] 
     [INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ hello-strongbox-maven ---
     [WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
-    [INFO] skip non existing resourceDirectory /java/opensource/carlspring/strongbox-examples/hello-strongbox-maven/src/test/resources
+    [INFO] skip non existing resourceDirectory /home/carlspring/strongbox-examples/hello-strongbox-maven/src/test/resources
     [INFO] 
     [INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ hello-strongbox-maven ---
     [INFO] No sources to compile
@@ -59,11 +59,11 @@ This will build the code and deploy it to Strongbox.
     [INFO] No tests to run.
     [INFO] 
     [INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ hello-strongbox-maven ---
-    [INFO] Building jar: /java/opensource/carlspring/strongbox-examples/hello-strongbox-maven/target/hello-strongbox-maven-1.0-SNAPSHOT.jar
+    [INFO] Building jar: /home/carlspring/strongbox-examples/hello-strongbox-maven/target/hello-strongbox-maven-1.0-SNAPSHOT.jar
     [INFO] 
     [INFO] --- maven-install-plugin:2.4:install (default-install) @ hello-strongbox-maven ---
-    [INFO] Installing /java/opensource/carlspring/strongbox-examples/hello-strongbox-maven/target/hello-strongbox-maven-1.0-SNAPSHOT.jar to /home/carlspring/.m2/repository/org/carlspring/strongbox/examples/hello-strongbox-maven/1.0-SNAPSHOT/hello-strongbox-maven-1.0-SNAPSHOT.jar
-    [INFO] Installing /java/opensource/carlspring/strongbox-examples/hello-strongbox-maven/pom.xml to /home/carlspring/.m2/repository/org/carlspring/strongbox/examples/hello-strongbox-maven/1.0-SNAPSHOT/hello-strongbox-maven-1.0-SNAPSHOT.pom
+    [INFO] Installing /home/carlspring/strongbox-examples/hello-strongbox-maven/target/hello-strongbox-maven-1.0-SNAPSHOT.jar to /home/carlspring/.m2/repository/org/carlspring/strongbox/examples/hello-strongbox-maven/1.0-SNAPSHOT/hello-strongbox-maven-1.0-SNAPSHOT.jar
+    [INFO] Installing /home/carlspring/strongbox-examples/hello-strongbox-maven/pom.xml to /home/carlspring/.m2/repository/org/carlspring/strongbox/examples/hello-strongbox-maven/1.0-SNAPSHOT/hello-strongbox-maven-1.0-SNAPSHOT.pom
     [INFO] 
     [INFO] --- maven-deploy-plugin:2.7:deploy (default-deploy) @ hello-strongbox-maven ---
     Downloading: http://localhost:48080/storages/storage0/snapshots/org/carlspring/strongbox/examples/hello-strongbox-maven/1.0-SNAPSHOT/maven-metadata.xml
@@ -83,6 +83,5 @@ This will build the code and deploy it to Strongbox.
     [INFO] Finished at: 2016-04-30T04:17:13+01:00
     [INFO] Final Memory: 21M/311M
     [INFO] ------------------------------------------------------------------------
-
 
 
