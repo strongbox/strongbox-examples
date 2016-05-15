@@ -1,0 +1,21 @@
+<ivysettings>
+    
+    <credentials host="localhost" realm="Strongbox" username="maven" passwd="password"/>
+                      
+    <settings defaultResolver="maven-central" defaultConflictManager="all" />
+    
+    <resolvers>
+        <ibiblio name="maven-central" root="http://localhost:48080/storages/storage0/maven-central" m2compatible="true" />
+        <ibiblio name="releases" root="http://localhost:48080/storages/storage0/releases" m2compatible="true" />
+        <ibiblio name="snapshots" root="http://localhost:48080/storages/storage0/snapshots" m2compatible="true"
+                 checkmodified="true"
+                 changingPattern="*-SNAPSHOT"/>
+    </resolvers>
+    
+    <publications>
+        <artifact name="hello-strongbox-ant-ivy" ext="jar" type="jar"/>
+        <artifact name="hello-strongbox-ant-ivy" ext="pom" type="pom"/>
+    </publications>
+    
+</ivysettings>
+

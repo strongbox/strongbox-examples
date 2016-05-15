@@ -1,0 +1,50 @@
+<project name="test ivy" default="compile" xmlns:ivy="antlib:org.apache.ivy.ant">
+    
+    <property name="version" value="1.0-SNAPSHOT" />
+    
+    <target name="clean">
+        <delete dir="target"/>
+    </target>
+    
+    <target name="init-ivy">
+        <ivy:settings id="ivy.settings" file="ivysettings.xml"/>
+    </target>
+    
+    <target name="resolve" depends="init-ivy" description="Resolves the dependencies using Ivy">
+        <ivy:resolve />
+        <ivy:cachepath pathid="default.classpath"/>
+    </target>
+    
+    <target name="compile" depends="clean,resolve" description="Compiles the code">
+        <mkdir dir="target/classes" />
+        <javac srcdir="src/main/java" destdir="target/classes">
+            <classpath refid="default.classpath" />
+        </javac>
+    </target>
+    
+    <target name="jar" depends="compile">
+        <jar destfile="target/hello-strongbox-ant-ivy.jar" basedir="target/classes">
+            <manifest>
+               <attribute name="Main-Class" value="org.carlspring.strongbox.test.HelloWorld"/>
+            </manifest>
+        </jar>
+    </target>
+    
+    <target name="publish" depends="jar">
+        <ivy:deliver deliverpattern="target/ivy.xml" pubrevision="${version}" status="integration"/>
+
+        <ivy:makepom ivyfile="ivy.xml" pomfile="target/pom.xml"/>
+        <ivy:resolve/>
+        
+        <ivy:publish resolver="snapshots"
+                     pubrevision="${version}"
+                     status="integration"
+                     overwrite="true" 
+                     publishivy="false" >
+            <artifacts pattern="target/[artifact].[ext]" />
+        </ivy:publish>
+        
+        <echo message="Deployed version ${version}." />
+    </target>
+    
+</project>
