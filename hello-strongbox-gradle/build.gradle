@@ -17,10 +17,9 @@ configurations {
 }
 
 repositories {
-    maven { url "http://dev.carlspring.org/nexus/content/groups/carlspring" }
     maven { url "http://localhost:48080/storages/storage0/releases/" }
     maven { url "http://localhost:48080/storages/storage0/snapshots/" }
-    maven { url "http://repo.maven.apache.org/maven2" }
+    mavenCentral()
 }
 
 dependencies {
@@ -59,7 +58,3 @@ artifacts {
     archives sourcesJar
     archives javadocJar
 }
-
-// EXAMPLE: make artifact deployment a part of build everytime
-// comment or remove if you don't need that
-build.dependsOn uploadArchives

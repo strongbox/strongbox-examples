@@ -22,40 +22,56 @@ Read more on [gradle scripting here](https://docs.gradle.org/current/userguide/t
 Use this file to specify project-specific settings of gradle build as well as artifact name that resides as `rootProject.name` property.
 
 # The `gradle.properties` file
-This file should be created manually by every user, or it' perfectly fine to have global settings located in .gradle/gradle.properties. For more details please visit [Gradle Build environment page](https://docs.gradle.org/current/userguide/build_environment.html).
+This file should be created manually by every user, or it' perfectly fine to have global settings located in .gradle/gradle.properties. For more details please visit [Gradle Build environment page](https://docs.gradle.org/current/userguide/build_environment.html). Example of properties for this project:
+
+   mavenUser=maven
+   mavenPassword=password
+
+# Credentials
+Just take a look at the previous section. You could place credentials in the `gradle.properties` in your project root or in the .gradle directory (last will have global impact).
 
 # How to build from source code
-When you clone this example project sources, go into that directory and simply type `gradle build`. 
+When you clone this example project sources, go into that directory and simply type `gradle clean upload`. This will try to deploy artifacts to the Strongbox Repository.
 
 # How to customize target artifact repository during upload
 Change `repositories.mavenDeployer.repository` and specify URL and auth credentials of any repo you would like to upload to. Make sure that you don' have SNAPSHOT in your version if you are uploading to the release repo.
 
 # Example output
 
-   Alexanders-iMac:strongbox-examples neo$ cd hello-strongbox-gradle/
-   Alexanders-iMac:hello-strongbox-gradle neo$ gradle build
+   >:hello-strongbox-gradle neo$ gradle clean upload
    Starting a new Gradle Daemon for this build (subsequent builds will be faster).
-   :compileJava UP-TO-DATE
+   :clean
+   :compileJava
    :processResources UP-TO-DATE
-   :classes UP-TO-DATE
-   :jar UP-TO-DATE
+   :classes
+   :jar
    :javadoc
    :javadocJar
-   :sourcesJar UP-TO-DATE
-   :assemble
-   :compileTestJava UP-TO-DATE
-   :processTestResources UP-TO-DATE
-   :testClasses UP-TO-DATE
-   :test UP-TO-DATE
-   :check UP-TO-DATE
+   :sourcesJar
    :uploadArchives
    Could not find metadata upload:hello-strongbox-gradle:1.0-SNAPSHOT/maven-metadata.xml in remote (http://localhost:48080/storages/storage0/snapshots/)
    Could not find metadata upload:hello-strongbox-gradle/maven-metadata.xml in remote (http://localhost:48080/storages/storage0/snapshots/)
-   :build
-
+   
    BUILD SUCCESSFUL
+   
+   Total time: 13.035 secs
 
-   Total time: 9.654 secs
+For the second time when maven-metadata.xml will be placed in the remote (in this case local) repository you will not see the warning:
+
+    >:hello-strongbox-gradle neo$ gradle clean upload
+    :clean
+    :compileJava
+    :processResources UP-TO-DATE
+    :classes
+    :jar
+    :javadoc
+    :javadocJar
+    :sourcesJar
+    :uploadArchives
+    
+    BUILD SUCCESSFUL
+    
+    Total time: 2.034 secs
 
 # Troubleshooting
 
