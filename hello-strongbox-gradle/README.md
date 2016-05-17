@@ -38,23 +38,23 @@ Change `repositories.mavenDeployer.repository` and specify URL and auth credenti
 
 # Example output
 
-   >:hello-strongbox-gradle neo$ gradle clean upload
-   Starting a new Gradle Daemon for this build (subsequent builds will be faster).
-   :clean
-   :compileJava
-   :processResources UP-TO-DATE
-   :classes
-   :jar
-   :javadoc
-   :javadocJar
-   :sourcesJar
-   :uploadArchives
-   Could not find metadata upload:hello-strongbox-gradle:1.0-SNAPSHOT/maven-metadata.xml in remote (http://localhost:48080/storages/storage0/snapshots/)
-   Could not find metadata upload:hello-strongbox-gradle/maven-metadata.xml in remote (http://localhost:48080/storages/storage0/snapshots/)
-   
-   BUILD SUCCESSFUL
-   
-   Total time: 13.035 secs
+    >:hello-strongbox-gradle neo$ gradle clean upload
+    Starting a new Gradle Daemon for this build (subsequent builds will be faster).
+    :clean
+    :compileJava
+    :processResources UP-TO-DATE
+    :classes
+    :jar
+    :javadoc
+    :javadocJar
+    :sourcesJar
+    :uploadArchives
+    Could not find metadata upload:hello-strongbox-gradle:1.0-SNAPSHOT/maven-metadata.xml in remote (http://localhost:48080/storages/storage0/snapshots/)
+    Could not find metadata upload:hello-strongbox-gradle/maven-metadata.xml in remote (http://localhost:48080/storages/storage0/snapshots/)
+           
+    BUILD SUCCESSFUL
+           
+    Total time: 13.035 secs
 
 For the second time when maven-metadata.xml will be placed in the remote (in this case local) repository you will not see the warning:
 
