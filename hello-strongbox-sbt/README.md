@@ -24,7 +24,7 @@ For more details check the "See also" section below.
 
 # The credentials
 
-These are plain-text. One way to do it is by specifying these as system properties such as `-Dstrongbox.username=maven -Dstrongbox.password=password` and reading them in from the build.sbt script.
+These are plain-text. One way to do it is by specifying these as system properties such as `-Dstrongbox.username=maven -Dstrongbox.password=password` and reading them in from the `build.sbt` script.
 
 For more details check the "See also" section below.
 
