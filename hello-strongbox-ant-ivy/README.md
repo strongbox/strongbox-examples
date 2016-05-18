@@ -81,6 +81,6 @@ This will build the code and deploy it to Strongbox.
     BUILD SUCCESSFUL
     Total time: 1 second
 
-See also:
+# See also:
 * A [useful link](https://theholyjava.wordpress.com/2011/01/26/using-ivy-with-pom-xml/) regarding `pom.xml` file treatment.
 * [Ivy: makepom](http://ant.apache.org/ivy/history/2.4.0/use/makepom.html) documentation.
