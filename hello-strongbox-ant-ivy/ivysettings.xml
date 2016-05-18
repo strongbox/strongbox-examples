@@ -1,7 +1,5 @@
 <ivysettings>
     
-    <credentials host="localhost" realm="Strongbox" username="maven" passwd="password"/>
-                      
     <settings defaultResolver="maven-central" defaultConflictManager="all" />
     
     <resolvers>
