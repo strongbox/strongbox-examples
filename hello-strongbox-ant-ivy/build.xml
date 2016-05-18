@@ -1,0 +1,76 @@
+<project name="test ivy" default="compile" xmlns:ivy="antlib:org.apache.ivy.ant">
+
+    <property name="artifactId" value="hello-strongbox-ant-ivy" />
+    <property name="version.release" value="1.0" />
+    <property name="version.snapshot" value="${version.release}-SNAPSHOT" />
+    
+    <property file="${user.home}/.ivy/credentials.properties"/>
+
+    <target name="clean" description="Cleans the build">
+        <delete dir="target"/>
+    </target>
+    
+    <target name="init-ivy" description="Sets up Ivy">
+        <ivy:settings id="ivy.settings" file="ivysettings.xml">
+            <credentials host="localhost" realm="Strongbox" username="${strongbox.username}" passwd="${strongbox.password}"/>
+        </ivy:settings>
+    </target>
+    
+    <target name="resolve" depends="init-ivy" description="Resolves the dependencies using Ivy">
+        <ivy:resolve />
+        <ivy:cachepath pathid="default.classpath"/>
+    </target>
+    
+    <target name="compile" depends="clean,resolve" description="Compiles the code">
+        <mkdir dir="target/classes" />
+        <javac srcdir="src/main/java" destdir="target/classes">
+            <classpath refid="default.classpath" />
+        </javac>
+    </target>
+    
+    <target name="jar" depends="compile" description="Creates the artifact archive">
+        <!-- Note that the jar of the produced artifact is not named in the Maven style. -->
+        <jar destfile="target/${artifactId}.jar" basedir="target/classes">
+            <manifest>
+               <attribute name="Main-Class" value="org.carlspring.strongbox.test.HelloWorld"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="publish-snapshot" depends="jar" description="Deploys to Strongbox 'snapshots' repository">
+        <ivy:deliver deliverpattern="target/ivy.xml" pubrevision="${version.snapshot}" status="integration"/>
+
+        <ivy:makepom ivyfile="ivy.xml" pomfile="target/pom.xml"/>
+
+        <ivy:publish resolver="snapshots"
+                     pubrevision="${version.snapshot}"
+                     status="integration"
+                     overwrite="true"
+                     publishivy="false" >
+            <artifacts pattern="target/[artifact].[ext]" />
+            <artifacts pattern="target/pom.xml" />
+            <artifact name="${artifactId}" ext="pom" type="pom" />
+        </ivy:publish>
+
+        <echo message="Deployed version ${version.snapshot}." />
+    </target>
+
+    <target name="publish-release" depends="jar" description="Deploys to the Strongbox 'releases' repository">
+        <ivy:deliver deliverpattern="target/ivy.xml" pubrevision="${version.release}" status="release"/>
+
+        <ivy:makepom ivyfile="ivy.xml" pomfile="target/pom.xml"/>
+
+        <ivy:publish resolver="releases"
+                     pubrevision="${version.release}"
+                     status="release"
+                     overwrite="false"
+                     publishivy="false">
+            <artifacts pattern="target/[artifact].[ext]" />
+            <artifacts pattern="target/pom.xml" />
+            <artifact name="${artifactId}" ext="pom" type="pom" />
+        </ivy:publish>
+
+        <echo message="Deployed version ${version.release}." />
+    </target>
+
+</project>
