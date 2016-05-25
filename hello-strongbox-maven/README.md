@@ -84,4 +84,7 @@ This will build the code and deploy it to Strongbox.
     [INFO] Final Memory: 21M/311M
     [INFO] ------------------------------------------------------------------------
 
-
+# See also
+* [Maven: POM Reference](https://maven.apache.org/pom.html)
+* [Maven: Settings Reference](https://maven.apache.org/settings.html)
+* [Maven: Credentials Encryption Guide](https://maven.apache.org/guides/mini/guide-encryption.html)
