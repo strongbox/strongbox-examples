@@ -24,8 +24,8 @@ Use this file to specify project-specific settings of gradle build as well as th
 # The `gradle.properties` file
 This file should be created manually by every developer, or it's perfectly fine to have global settings located in `.gradle/gradle.properties`. For more details please visit [Gradle Build environment page](https://docs.gradle.org/current/userguide/build_environment.html). Here are the properties for this example project:
 
-   mavenUser=maven
-   mavenPassword=password
+    mavenUser=maven
+    mavenPassword=password
 
 # Credentials
 As illustrated in the section above, you should place your credentials in the `gradle.properties` in your project's root, or in the `~/.gradle` directory (which will have a global impact).
