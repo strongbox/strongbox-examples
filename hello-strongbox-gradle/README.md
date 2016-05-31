@@ -76,3 +76,8 @@ For the second time when `maven-metadata.xml` will be placed in the remote (in t
 # Troubleshooting
 
 * If you see error about missing metadata.xml or something similar for the FIRST time when you upload an artifact - don't worry, because this simply said that you are new to this repository entry and there is no existing metadata for your artifact. It will be created.
+
+# See Also
+* [Gradle: Tutorial Using Tasks](https://docs.gradle.org/current/userguide/tutorial_using_tasks.html)
+* [Gradle: Artifact Management](https://docs.gradle.org/current/userguide/artifact_management.html)
+ 
