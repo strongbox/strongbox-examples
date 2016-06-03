@@ -7,9 +7,6 @@ compileJava {
     options.encoding = 'UTF-8'
 }
 
-group = 'org.carlspring.strongbox.examples'
-version = '1.0-SNAPSHOT'
-
 description = "Example project that shows how to use gradle to build and deploy artifacts to Strongbox"
 
 configurations {
@@ -35,9 +32,9 @@ uploadArchives {
             repository(url: "http://localhost:48080/storages/storage0/snapshots/") {
                 authentication(userName: mavenUser, password: mavenPassword)
             }
-            pom.version = version
+            pom.groupId = "org.carlspring.strongbox.examples"
             pom.artifactId = "hello-strongbox-gradle"
-            pom.groupId = group
+            pom.version = "1.0-SNAPSHOT"
     }
 }
 
