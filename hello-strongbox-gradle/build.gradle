@@ -9,6 +9,9 @@ compileJava {
 
 description = "Example project that shows how to use gradle to build and deploy artifacts to Strongbox"
 
+ext.username = System.getProperty('credentials.username') != null ? System.getProperty('credentials.username') : mavenUser
+ext.password = System.getProperty('credentials.password') != null ? System.getProperty('credentials.password') : mavenPassword
+
 configurations {
     deployerJars
 }
@@ -30,7 +33,7 @@ uploadArchives {
     repositories.mavenDeployer {
             configuration = configurations.deployerJars
             repository(url: "http://localhost:48080/storages/storage0/snapshots/") {
-                authentication(userName: mavenUser, password: mavenPassword)
+                authentication(userName: usernams, password: password)
             }
             pom.groupId = "org.carlspring.strongbox.examples"
             pom.artifactId = "hello-strongbox-gradle"
