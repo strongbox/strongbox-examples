@@ -81,3 +81,4 @@ For the second time when `maven-metadata.xml` will be placed in the remote (in t
 * [Gradle: Tutorial Using Tasks](https://docs.gradle.org/current/userguide/tutorial_using_tasks.html)
 * [Gradle: Artifact Management](https://docs.gradle.org/current/userguide/artifact_management.html)
 * [Gradle: Build Environment](https://docs.gradle.org/current/userguide/build_environment.html)
+* [Spring: Building Java Projects with Gradle](https://spring.io/guides/gs/gradle/)
