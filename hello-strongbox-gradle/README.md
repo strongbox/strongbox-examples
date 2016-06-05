@@ -28,7 +28,14 @@ This file should be created manually by every developer, or it's perfectly fine 
     mavenPassword=password
 
 # Credentials
+
+## Via `gradle.properties`:
 As illustrated in the section above, you should place your credentials in the `gradle.properties` in your project's root, or in the `~/.gradle` directory (which will have a global impact).
+
+## Via command-line:
+Specify the following Java args:
+
+    -Dcredentials.username=maven -Dcredentials.password=password
 
 # How to build from source code
 When you clone this example project sources, go into that directory and execute `gradle clean upload`. This will try to deploy artifacts to the Strongbox Repository.
