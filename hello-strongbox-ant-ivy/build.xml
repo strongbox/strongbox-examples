@@ -4,13 +4,24 @@
     <property name="version.release" value="1.0" />
     <property name="version.snapshot" value="${version.release}-SNAPSHOT" />
     
+    <property environment="env" />
+    <property name="ivy.home" value="${env.IVY_HOME}" />
+    
     <property file="${user.home}/.ivy/credentials.properties"/>
-
+    
     <target name="clean" description="Cleans the build">
         <delete dir="target"/>
     </target>
     
     <target name="init-ivy" description="Sets up Ivy">
+        <echo message="IVY_HOME=${ivy.home}" />
+    
+        <path id="ivy.lib.path">
+            <fileset dir="${ivy.home}" includes="*.jar"/>
+        </path>
+    
+        <taskdef resource="org/apache/ivy/ant/antlib.xml" uri="antlib:org.apache.ivy.ant" classpathref="ivy.lib.path"/>
+    
         <ivy:settings id="ivy.settings" file="ivysettings.xml">
             <credentials host="localhost" realm="Strongbox" username="${strongbox.username}" passwd="${strongbox.password}"/>
         </ivy:settings>
