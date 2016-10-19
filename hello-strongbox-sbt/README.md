@@ -60,3 +60,4 @@ Via the SBT console you can do:
 
 * [SBT: Publishing](http://www.scala-sbt.org/0.13/docs/Publishing.html)
 * [SBT: Repositories](http://www.scala-sbt.org/0.13/docs/Proxy-Repositories.html)
+* [SBT: Metadata](http://www.scala-sbt.org/0.13/docs/Howto-Project-Metadata.html)
