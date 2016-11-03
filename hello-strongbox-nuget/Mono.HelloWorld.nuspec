@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+	<metadata>
+		<id>Strongbox.Nuget.HelloWorld</id>
+		<version>1.0</version>
+		<authors>Sergey Bespalov</authors>
+		<owners>Carlspring Consulting &amp; Development Ltd.</owners>
+		<licenseUrl>https://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+		<projectUrl>https://github.com/strongbox/strongbox-examples/
+		</projectUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>Strongbox Nuget Example</description>
+		<tags>mono strongbox nuget</tags>
+	</metadata>
+	<files>
+		<file src="bin/*.dll" target="lib" /> 
+	</files>
+</package>
