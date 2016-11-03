@@ -6,7 +6,7 @@ Execute the following command:
 
      mcs -t:library -out:./bin/HelloWorld.dll ./src/HelloWorld.cs
 
-This will build the code and produce `dll` library.
+This will build the code and make `dll` library.
 
 # How to make NuGet package
 
