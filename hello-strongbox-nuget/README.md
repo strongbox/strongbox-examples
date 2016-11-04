@@ -9,6 +9,7 @@ Go to the project folder and execute the following commands:
     $ echo '<?xml version="1.0" encoding="utf-8"?><configuration></configuration>' > ./.nuget/NuGet.config
 
 *There should be no output if success*
+> Note that 'bin' and '.nuget' folders must be added to ignore list of your `VCS`
 
 ## Create NuGet configuration
 
