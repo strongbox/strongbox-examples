@@ -50,12 +50,12 @@ This will build the code and make `dll` library.
 
 Execute the following command:
 
-    $ mono --runtime=v4.0 nuget.exe pack ./Hello.Strongbox.Nuget.nuspec
+    $ mono --runtime=v4.0 nuget.exe pack ./Hello.Strongbox.Nuget.Mono.nuspec
     
 The output should be like follows:
 
-    carlspring@linux-70e2:/home/carlspring/strongbox-examples/hello-strongbox-nuget> mono --runtime=v4.0 nuget.exe pack ./Hello.Strongbox.Nuget.nuspec 
-    Attempting to build package from 'Hello.Strongbox.Nuget.nuspec'.
+    carlspring@linux-70e2:/home/carlspring/strongbox-examples/hello-strongbox-nuget> mono --runtime=v4.0 nuget.exe pack ./Hello.Strongbox.Nuget.Mono.nuspec 
+    Attempting to build package from 'Hello.Strongbox.Nuget.Mono.nuspec'.
     Successfully created package '/home/carlspring/strongbox-examples/hello-strongbox-nuget/Org.Carlspring.Strongbox.Examples.Nuget.Mono.1.0.nupkg'.
 
 ## How to push NuGet package into Strongbox repository
