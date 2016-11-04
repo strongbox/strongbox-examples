@@ -1,6 +1,6 @@
 This is an example of how to use the Strongbox artifact repository manager with NuGet.
 
-# Prepare project workspace
+## Prepare project workspace
 
 Go to the project folder and execute the following commands:
 
@@ -10,17 +10,17 @@ Go to the project folder and execute the following commands:
 
 *There should be no output if success*
 
-# Create NuGet configuration
+## Create NuGet configuration
 
-1. Add default push repository URL
+### Add default push repository URL
 
     $ mono --runtime=v4.0.30319 nuget.exe config -set DefaultPushSource={repositoryUrl} -ConfigFile ./nuget/NuGet.config
 
-Example below (*There should be no output if success*):
+Example below (*there should be no output if success*):
     
     carlspring@linux-70e2:/home/carlspring/strongbox-examples/hello-strongbox-nuget> mono --runtime=v4.0.30319 nuget.exe config -set DefaultPushSource=http://localhost:8080/nuget/storages/MySource -ConfigFile ./.nuget/NuGet.config
 
-2. Set api key to use with your repository
+### Set api key to use with your repository
 
     $ mono --runtime=v4.0.30319 nuget.exe setApiKey {apiKey} -Source {repositoryUrl} -ConfigFile ./.nuget/NuGet.config
 
@@ -30,7 +30,7 @@ The output should be like follows:
     The API Key 'bXktYXBpLWtleQ==' was saved for 'http://localhost:8080/nuget/storages/MySource'.
 
 
-# How to build
+## How to build
 
 Execute the following command:
 
@@ -38,7 +38,7 @@ Execute the following command:
 
 This will build the code and make `dll` library.
 
-# How to make NuGet package
+## How to make NuGet package
 
 Execute the following command:
 
@@ -50,7 +50,7 @@ The output should be like follows:
     Attempting to build package from 'Hello.Strongbox.Nuget.nuspec'.
     Successfully created package '/home/carlspring/strongbox-examples/hello-strongbox-nuget/Org.Carlspring.Strongbox.Examples.Nuget.Mono.1.0.nupkg'.
 
-# How to push NuGet package into Strongbox repository
+## How to push NuGet package into Strongbox repository
 
 Execute the following command:
     
