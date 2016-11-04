@@ -3,7 +3,7 @@ This is an example of how to use the Strongbox artifact repository manager with 
 
 # Pre-requisites
 
-The following is a minimal configuration in order to be able to use Ivy properly with Nexus.
+The following is a minimal configuration in order to be able to use Ivy properly with Strongbox.
 
 * Install a Java SDK.
 * Define an `IVY_HOME` variable pointing to the base directory of your Ivy installation.
