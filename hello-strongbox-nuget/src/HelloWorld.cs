@@ -1,6 +1,6 @@
 using System;
 
-namespace org.carlspring.strongbox.test.nuget
+namespace org.carlspring.strongbox.examples.nuget.mono
 {
     public class HelloWorld
 	{
