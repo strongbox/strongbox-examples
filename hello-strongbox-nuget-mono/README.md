@@ -70,7 +70,8 @@ The output should be like follows:
     Pushing Org.Carlspring.Strongbox.Examples.Nuget.Mono 1.0 to 'http://localhost:8080/nuget/storages/MySource'...
     Your package was pushed.
 
-## See also:
+# See also:
 * [Install Mono on Linux](http://www.mono-project.com/docs/getting-started/install/linux/)
 * [NuGet CLI Reference](https://docs.nuget.org/ndocs/tools/nuget.exe-cli-reference)
 * [Running NuGet command-line on Linux](http://headsigned.com/article/running-nuget-command-line-on-linux)
+* [Nuget: Dependency Resolution In Nuget 3.x](https://docs.microsoft.com/en-us/nuget/consume-packages/dependency-resolution#dependency-resolution-in-nuget-3x)
