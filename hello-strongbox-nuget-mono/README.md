@@ -22,7 +22,7 @@ Go to the root project folder and execute the following commands:
 
 ### Add default push repository URL
 
-    $ mono --runtime=v4.0 nuget.exe config -set DefaultPushSource={repositoryUrl} -ConfigFile ./nuget/NuGet.config
+    $ mono --runtime=v4.0 nuget.exe config -set DefaultPushSource={repositoryUrl} -ConfigFile ./.nuget/NuGet.config
 
 Example below (*there should be no output if success*):
     
