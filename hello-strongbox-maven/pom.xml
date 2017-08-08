@@ -20,22 +20,22 @@
 
     <repositories>
         <repository>
-            <id>strongbox-releases</id>
+            <id>releases</id>
             <url>http://localhost:48080/storages/storage0/releases/</url>
         </repository>
         <repository>
-            <id>strongbox-snapshots</id>
+            <id>snapshots</id>
             <url>http://localhost:48080/storages/storage0/snapshot/</url>
         </repository>
     </repositories>
 
     <distributionManagement>
         <repository>
-            <id>strongbox-releases</id>
+            <id>releases</id>
             <url>http://localhost:48080/storages/storage0/releases/</url>
         </repository>
         <snapshotRepository>
-            <id>strongbox-snapshots</id>
+            <id>snapshots</id>
             <url>http://localhost:48080/storages/storage0/snapshots/</url>
             <uniqueVersion>true</uniqueVersion>
         </snapshotRepository>
