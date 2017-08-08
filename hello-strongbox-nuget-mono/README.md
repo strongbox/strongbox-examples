@@ -92,13 +92,25 @@ The output should be like follows:
 
 Execute the following command:
     
-    mono --runtime=v4.0 nuget.exe push ./Org.Carlspring.Strongbox.Examples.Nuget.Mono.1.0.nupkg -ConfigFile ./.nuget/NuGet.config
+    $ mono --runtime=v4.0 nuget.exe push ./Org.Carlspring.Strongbox.Examples.Nuget.Mono.1.0.nupkg -ConfigFile ./.nuget/NuGet.config
 
 The output should be like follows:
 
     carlspring@linux-70e2:/home/carlspring/strongbox-examples/hello-strongbox-nuget-mono> mono --runtime=v4.0 nuget.exe push ./Org.Carlspring.Strongbox.Examples.Nuget.Mono.1.0.nupkg -ConfigFile ./.nuget/NuGet.config
     Pushing Org.Carlspring.Strongbox.Examples.Nuget.Mono 1.0 to 'http://localhost:8080/nuget/storages/MySource'...
     Your package was pushed.
+
+## How to search NuGet packages within Strongbox repository
+
+Execute the following command:
+    
+    $ mono --runtime=v4.0 nuget.exe list Org.Carlspring -ConfigFile ./.nuget/NuGet.config
+
+The output should be like follows:
+
+    carlspring@linux-70e2:/home/carlspring/strongbox-examples/hello-strongbox-nuget-mono> mono --runtime=v4.0 nuget.exe list Org.Carlspring  -ConfigFile ./.nuget/NuGet.config
+    Org.Carlspring.Strongbox.Examples.Nuget.Mono 1.0.0
+
 
 ## See also:
 * [Install Mono on Linux](http://www.mono-project.com/docs/getting-started/install/linux/)
