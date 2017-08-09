@@ -111,6 +111,21 @@ The output should be like follows:
     carlspring@linux-70e2:/home/carlspring/strongbox-examples/hello-strongbox-nuget-mono> mono --runtime=v4.0 nuget.exe list Org.Carlspring  -ConfigFile ./.nuget/NuGet.config
     Org.Carlspring.Strongbox.Examples.Nuget.Mono 1.0.0
 
+## How to delete NuGet package
+
+Execute the following command:
+    
+    $ mono --runtime=v4.0 nuget.exe delete Org.Carlspring.Strongbox.Examples.Nuget.Mono 1.0.1 -Source strongbox -ConfigFile ./.nuget/NuGet.config
+
+The output should be like follows:
+
+    carlspring@linux-70e2:/home/carlspring/strongbox-examples/hello-strongbox-nuget-mono> mono --runtime=v4.0 nuget-4_1_0.exe delete Org.Carlspring.Strongbox.Examples.Nuget.Mono 1.0.1 -Source strongbox -ConfigFile ./.nuget/NuGet.config
+    Org.Carlspring.Strongbox.Examples.Nuget.Mono 1.0.1 will be deleted from the 'http://localhost:8080/strongbox/storages/nuget-common-storage/nuget-releases'. Would you like to continue? (y/N) y
+    WARNING: Deleting Org.Carlspring.Strongbox.Examples.Nuget.Mono 1.0.1 from the 'http://localhost:8080/strongbox/storages/nuget-common-storage/nuget-releases'.
+    DELETE http://localhost:8080/strongbox/storages/nuget-common-storage/nuget-releases/Org.Carlspring.Strongbox.Examples.Nuget.Mono/1.0.1
+    OK http://localhost:8080/strongbox/storages/nuget-common-storage/nuget-releases/Org.Carlspring.Strongbox.Examples.Nuget.Mono/1.0.1 7277ms
+    Org.Carlspring.Strongbox.Examples.Nuget.Mono 1.0.1 was deleted successfully.
+
 
 ## See also:
 * [Install Mono on Linux](http://www.mono-project.com/docs/getting-started/install/linux/)
