@@ -28,6 +28,15 @@ Example below (*there should be no output if success*):
     
     carlspring@linux-70e2:/home/carlspring/strongbox-examples/hello-strongbox-nuget-mono> mono --runtime=v4.0 nuget.exe config -set DefaultPushSource=http://localhost:48080/storages/nuget-common-storage/nuget-releases -ConfigFile ./.nuget/NuGet.config
 
+### Get api key to use with your repository
+
+NuGet protocol assumes that users need to be authenticated with `API Key` to be able to deploy or delete your packages.
+Strongbox provides the REST API to get an API Key for specified user, you can use `curl` for this like follows:
+    
+    $ curl -X GET --user admin:password http://localhost:48080/users/user/admin/generate-security-token
+    eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJTdHJvbmdib3giLCJqdGkiOiJCdU85OU8xV2VzQ1NkYWcyT3k0eHh3Iiwic3ViIjoiYWRtaW4iLCJzZWN1cml0eS10b2tlbi1rZXkiOiJhZG1pbi1zZWNyZXQifQ.Yzq5zYlDZVCVSxRmSgclRCHW_KojZw-iFGfkWWnTTEw
+
+
 ### Set api key to use with your repository
 
     $ mono --runtime=v4.0 nuget.exe setApiKey {apiKey} -Source {repositoryUrl} -ConfigFile ./.nuget/NuGet.config
@@ -36,11 +45,6 @@ The output should be like follows:
 
     carlspring@linux-70e2:/home/carlspring/strongbox-examples/hello-strongbox-nuget-mono> mono --runtime=v4.0 nuget.exe setApiKey bXktYXBpLWtleQ== -Source http://localhost:48080/storages/nuget-common-storage/nuget-releases -ConfigFile ./.nuget/NuGet.config
     The API Key 'bXktYXBpLWtleQ==' was saved for 'http://localhost:48080/storages/nuget-common-storage/nuget-releases'.
-
-> Strongbox provides the REST API to get an API Key for specified user, you can use `curl` for this like follows:
-    
-    $ curl -X GET --user admin:password http://localhost:48080/users/user/admin/generate-security-token
-    eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJTdHJvbmdib3giLCJqdGkiOiJCdU85OU8xV2VzQ1NkYWcyT3k0eHh3Iiwic3ViIjoiYWRtaW4iLCJzZWN1cml0eS10b2tlbi1rZXkiOiJhZG1pbi1zZWNyZXQifQ.Yzq5zYlDZVCVSxRmSgclRCHW_KojZw-iFGfkWWnTTEw
 
 ### Provide storage authentication (if needed)
 
