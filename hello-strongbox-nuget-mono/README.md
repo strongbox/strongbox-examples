@@ -48,9 +48,9 @@ The output should be like follows:
 
 ### Provide storage authentication (if needed)
 
-Strongbox using `Basic Authentication` to access storages by default, so you need to configure credentials in `<packageSourceCredentials>` section of `NuGet.config` file.
+Strongbox is using HTTP Basic Authentication to access storages by default, so you need to configure your credentials in the `<packageSourceCredentials>` section of your `NuGet.config` file.
 
-Finally your `NuGet.config` file should look like follows:
+Finally, your `NuGet.config` file should look like follows:
 
     $ cat .nuget/NuGet.config 
     <?xml version="1.0" encoding="utf-8"?>
@@ -78,7 +78,7 @@ Execute the following command:
 
      $ mcs -t:library -out:./bin/HelloWorld.dll ./src/HelloWorld.cs
 
-This will build the code and make `dll` library.
+This will build the code and make a `dll` library.
 
 ## How to make NuGet package
 
@@ -101,10 +101,10 @@ Execute the following command:
 The output should be like follows:
 
     carlspring@linux-70e2:/home/carlspring/strongbox-examples/hello-strongbox-nuget-mono> mono --runtime=v4.0 nuget.exe push ./Org.Carlspring.Strongbox.Examples.Nuget.Mono.1.0.nupkg -ConfigFile ./.nuget/NuGet.config
-    Pushing Org.Carlspring.Strongbox.Examples.Nuget.Mono 1.0 to 'http://localhost:48080/strongbox/storages/nuget-common-storage/nuget-releases'...
+    Pushing Org.Carlspring.Strongbox.Examples.Nuget.Mono 1.0 to 'http://localhost:48080/storages/nuget-common-storage/nuget-releases'...
     Your package was pushed.
 
-## How to search NuGet packages within Strongbox repository
+## How to search for NuGet packages in Strongbox repositories
 
 Execute the following command:
     
@@ -115,7 +115,7 @@ The output should be like follows:
     carlspring@linux-70e2:/home/carlspring/strongbox-examples/hello-strongbox-nuget-mono> mono --runtime=v4.0 nuget.exe list Org.Carlspring  -ConfigFile ./.nuget/NuGet.config
     Org.Carlspring.Strongbox.Examples.Nuget.Mono 1.0.0
 
-## How to delete NuGet package
+## How to delete a NuGet package
 
 Execute the following command:
     
@@ -124,10 +124,10 @@ Execute the following command:
 The output should be like follows:
 
     carlspring@linux-70e2:/home/carlspring/strongbox-examples/hello-strongbox-nuget-mono> mono --runtime=v4.0 nuget-4_1_0.exe delete Org.Carlspring.Strongbox.Examples.Nuget.Mono 1.0.1 -Source strongbox -ConfigFile ./.nuget/NuGet.config
-    Org.Carlspring.Strongbox.Examples.Nuget.Mono 1.0.1 will be deleted from the 'http://localhost:48080/strongbox/storages/nuget-common-storage/nuget-releases'. Would you like to continue? (y/N) y
-    WARNING: Deleting Org.Carlspring.Strongbox.Examples.Nuget.Mono 1.0.1 from the 'http://localhost:48080/strongbox/storages/nuget-common-storage/nuget-releases'.
-    DELETE http://localhost:48080/strongbox/storages/nuget-common-storage/nuget-releases/Org.Carlspring.Strongbox.Examples.Nuget.Mono/1.0.1
-    OK http://localhost:48080/strongbox/storages/nuget-common-storage/nuget-releases/Org.Carlspring.Strongbox.Examples.Nuget.Mono/1.0.1 7277ms
+    Org.Carlspring.Strongbox.Examples.Nuget.Mono 1.0.1 will be deleted from the 'http://localhost:48080/storages/nuget-common-storage/nuget-releases'. Would you like to continue? (y/N) y
+    WARNING: Deleting Org.Carlspring.Strongbox.Examples.Nuget.Mono 1.0.1 from the 'http://localhost:48080/storages/nuget-common-storage/nuget-releases'.
+    DELETE http://localhost:48080/storages/nuget-common-storage/nuget-releases/Org.Carlspring.Strongbox.Examples.Nuget.Mono/1.0.1
+    OK http://localhost:48080/storages/nuget-common-storage/nuget-releases/Org.Carlspring.Strongbox.Examples.Nuget.Mono/1.0.1 7277ms
     Org.Carlspring.Strongbox.Examples.Nuget.Mono 1.0.1 was deleted successfully.
 
 
