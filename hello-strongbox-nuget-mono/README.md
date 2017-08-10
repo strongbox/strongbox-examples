@@ -97,7 +97,7 @@ Execute the following command:
 The output should be like follows:
 
     carlspring@linux-70e2:/home/carlspring/strongbox-examples/hello-strongbox-nuget-mono> mono --runtime=v4.0 nuget.exe push ./Org.Carlspring.Strongbox.Examples.Nuget.Mono.1.0.nupkg -ConfigFile ./.nuget/NuGet.config
-    Pushing Org.Carlspring.Strongbox.Examples.Nuget.Mono 1.0 to 'http://localhost:8080/nuget/storages/MySource'...
+    Pushing Org.Carlspring.Strongbox.Examples.Nuget.Mono 1.0 to 'http://localhost:48080/strongbox/storages/nuget-common-storage/nuget-releases'...
     Your package was pushed.
 
 ## How to search NuGet packages within Strongbox repository
@@ -120,10 +120,10 @@ Execute the following command:
 The output should be like follows:
 
     carlspring@linux-70e2:/home/carlspring/strongbox-examples/hello-strongbox-nuget-mono> mono --runtime=v4.0 nuget-4_1_0.exe delete Org.Carlspring.Strongbox.Examples.Nuget.Mono 1.0.1 -Source strongbox -ConfigFile ./.nuget/NuGet.config
-    Org.Carlspring.Strongbox.Examples.Nuget.Mono 1.0.1 will be deleted from the 'http://localhost:8080/strongbox/storages/nuget-common-storage/nuget-releases'. Would you like to continue? (y/N) y
-    WARNING: Deleting Org.Carlspring.Strongbox.Examples.Nuget.Mono 1.0.1 from the 'http://localhost:8080/strongbox/storages/nuget-common-storage/nuget-releases'.
-    DELETE http://localhost:8080/strongbox/storages/nuget-common-storage/nuget-releases/Org.Carlspring.Strongbox.Examples.Nuget.Mono/1.0.1
-    OK http://localhost:8080/strongbox/storages/nuget-common-storage/nuget-releases/Org.Carlspring.Strongbox.Examples.Nuget.Mono/1.0.1 7277ms
+    Org.Carlspring.Strongbox.Examples.Nuget.Mono 1.0.1 will be deleted from the 'http://localhost:48080/strongbox/storages/nuget-common-storage/nuget-releases'. Would you like to continue? (y/N) y
+    WARNING: Deleting Org.Carlspring.Strongbox.Examples.Nuget.Mono 1.0.1 from the 'http://localhost:48080/strongbox/storages/nuget-common-storage/nuget-releases'.
+    DELETE http://localhost:48080/strongbox/storages/nuget-common-storage/nuget-releases/Org.Carlspring.Strongbox.Examples.Nuget.Mono/1.0.1
+    OK http://localhost:48080/strongbox/storages/nuget-common-storage/nuget-releases/Org.Carlspring.Strongbox.Examples.Nuget.Mono/1.0.1 7277ms
     Org.Carlspring.Strongbox.Examples.Nuget.Mono 1.0.1 was deleted successfully.
 
 
