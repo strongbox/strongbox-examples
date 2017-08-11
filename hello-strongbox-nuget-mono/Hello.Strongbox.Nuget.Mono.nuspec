@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
 	<metadata>
 		<id>Org.Carlspring.Strongbox.Examples.Nuget.Mono</id>
-		<version>1.0</version>
+		<version>1.0.0</version>
 		<authors>Sergey Bespalov</authors>
 		<owners>Carlspring Consulting &amp; Development Ltd.</owners>
 		<licenseUrl>https://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
