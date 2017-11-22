@@ -22,7 +22,7 @@ Go to the root project folder and execute the following commands:
 
 ### Add default push repository URL
 
-    $ mono --runtime=v4.0 nuget.exe config -set DefaultPushSource={repositoryUrl} -ConfigFile ./nuget/NuGet.config
+    $ mono --runtime=v4.0 nuget.exe config -set DefaultPushSource={repositoryUrl} -ConfigFile ./.nuget/NuGet.config
 
 Example below (*there should be no output if success*):
     
@@ -130,8 +130,8 @@ The output should be like follows:
     OK http://localhost:48080/storages/nuget-common-storage/nuget-releases/Org.Carlspring.Strongbox.Examples.Nuget.Mono/1.0.1 7277ms
     Org.Carlspring.Strongbox.Examples.Nuget.Mono 1.0.1 was deleted successfully.
 
-
-## See also:
+# See also:
 * [Install Mono on Linux](http://www.mono-project.com/docs/getting-started/install/linux/)
 * [NuGet CLI Reference](https://docs.nuget.org/ndocs/tools/nuget.exe-cli-reference)
 * [Running NuGet command-line on Linux](http://headsigned.com/article/running-nuget-command-line-on-linux)
+* [Nuget: Dependency Resolution In Nuget 3.x](https://docs.microsoft.com/en-us/nuget/consume-packages/dependency-resolution#dependency-resolution-in-nuget-3x)

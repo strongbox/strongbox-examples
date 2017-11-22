@@ -3,12 +3,12 @@
     
     <servers>
         <server>
-            <id>strongbox-releases</id>
+            <id>releases</id>
             <username>maven</username>
             <password>password</password>
         </server>
         <server>
-            <id>strongbox-snapshots</id>
+            <id>snapshots</id>
             <username>maven</username>
             <password>password</password>
         </server>
