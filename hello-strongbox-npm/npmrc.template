@@ -1,0 +1,5 @@
+registry=http://localhost:48080/storages/storage-npm-common/npm-releases
+_password=password
+username=user
+email=someuser@example.com
+always-auth=true
