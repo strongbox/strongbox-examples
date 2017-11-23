@@ -8,7 +8,7 @@ The following is a minimal configuration in order to be able to use this tutoria
 
 ## Prepare project workspace
 
-First of all, you need to configure npm to use Strongbox as private registry. This can be done within your project using the `.npmrc` file, which is local npm configuration applied to your project. This project contains an `npmrc.template` file with a set of predefined configuration properties which can be used in your own project, or on your machine. Typically, all you'll need to do, is execute the following command, and create your `.npmrc` file:
+First of all, you need to configure npm to use Strongbox as a private registry. This can be done within your project using the `.npmrc` file, which is local npm configuration applied to your project. This project contains an `npmrc.template` file with a set of predefined configuration properties which can be used in your own project, or on your machine. Typically, all you'll need to do, is execute the following command, and create your `.npmrc` file:
     
     $ cp npmrc.template .npmrc
 
