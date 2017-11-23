@@ -1,5 +1,10 @@
-registry=http://localhost:48080/storages/storage-npm-common/npm-releases
+registry=http://localhost:48080/storages/storage-common-npm/npm-releases
+always-auth=true
+email=someuser@example.com
 _password=password
 username=user
-email=someuser@example.com
-always-auth=true
+
+; `_auth` is base64 encoded authentication token
+; you can use it instead of `username` and `_password` 
+;_auth = dXNlcjpwYXNzd29yZA==
+
