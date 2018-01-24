@@ -6,10 +6,10 @@ version := "1.0-SNAPSHOT"
 
 publishMavenStyle := true
 
-credentials += Credentials("Strongbox",
+credentials += Credentials("Strongbox Repository Manager",
                            "localhost",
-                           sys.props.getOrElse("strongbox.username", ""),
-                           sys.props.getOrElse("strongbox.password", ""))
+                           sys.props.getOrElse("strongbox.username", "admin"),
+                           sys.props.getOrElse("strongbox.password", "password"))
 
 resolvers += "Strongbox" at "http://localhost:48080/storages/storage0/group-releases/"
 
