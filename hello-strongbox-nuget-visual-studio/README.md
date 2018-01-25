@@ -233,6 +233,7 @@ Time Elapsed: 00:00:02.4972295
 
 
 # See also:
+* [Strongbox NuGet Mono Example](https://github.com/strongbox/strongbox-examples/tree/master/hello-strongbox-nuget-mono)
 * [NuGet Package Manager UI](https://docs.microsoft.com/en-us/nuget/tools/package-manager-ui)
 * [NuGet CLI Reference](https://docs.microsoft.com/en-us/nuget/tools/nuget-exe-cli-reference)
 * [Package Manager Console](https://docs.microsoft.com/en-us/nuget/tools/package-manager-console)
