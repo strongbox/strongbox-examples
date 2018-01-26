@@ -12,6 +12,17 @@ Append the -Source option to your NuGet.exe commands to access your storages in 
 ```sh
 nuget <command> -Source http://localhost:48080/storages/nuget-common-storage/nuget-releases
 ```
+### Change your Strongbox settings for Nuget Repositories
+You can manage your NuGet repositories in a single Nuget source. (both nuget.org proxy and your local releases, snapshots). Your [settings.xml](https://github.com/strongbox/strongbox/blob/ad4c47693b1e088297d7be56e61f63483427a637/strongbox-resources/strongbox-storage-api-resources/src/main/resources/etc/conf/strongbox.xml#L268) file for `nuget-public` should be following code block.
+```xml
+<repository id="nuget-public" policy="mixed" data-store="file-system" layout="NuGet" type="group" secured="true">
+    <group>
+        <repository>storage-nuget:nuget-snapshots</repository>
+        <repository>storage-nuget:nuget-releases</repository>
+        <repository>storage-common-proxies:nuget.org</repository>
+    </group>
+</repository>
+```
 ### Add your repository to NuGet package sources
 To manage packages, you'll need to configure NuGet to acccess your storages by performing following steps:
 
