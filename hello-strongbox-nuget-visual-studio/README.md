@@ -10,19 +10,9 @@ The following is a minimal configuration in order to be able to use this tutoria
 ## Create NuGet configuration
 Append the -Source option to your NuGet.exe commands to access your storages in Strongbox:
 ```sh
-nuget <command> -Source http://localhost:48080/storages/nuget-common-storage/nuget-releases
+nuget <command> -Source http://localhost:48080/storages/storage-nuget/nuget-releases
 ```
-### Change your Strongbox settings for Nuget Repositories
-You can manage your NuGet repositories in a single Nuget source. (both nuget.org proxy and your local releases, snapshots). Your [settings.xml](https://github.com/strongbox/strongbox/blob/ad4c47693b1e088297d7be56e61f63483427a637/strongbox-resources/strongbox-storage-api-resources/src/main/resources/etc/conf/strongbox.xml#L268) file for `nuget-public` should be following code block.
-```xml
-<repository id="nuget-public" policy="mixed" data-store="file-system" layout="NuGet" type="group" secured="true">
-    <group>
-        <repository>storage-nuget:nuget-snapshots</repository>
-        <repository>storage-nuget:nuget-releases</repository>
-        <repository>storage-common-proxies:nuget.org</repository>
-    </group>
-</repository>
-```
+
 ### Add your repository to NuGet package sources
 To manage packages, you'll need to configure NuGet to acccess your storages by performing following steps:
 
@@ -55,9 +45,9 @@ nuget setApiKey {apiKey} -Source {repositoryUrl}
 
 The output should be like follows:
 ```sh
-nuget.exe setApiKey eyJhbGciOiJIUzI1NiJ9. -Source http://localhost:48080/storages/nuget-common-storage/nuget-releases 
+nuget.exe setApiKey eyJhbGciOiJIUzI1NiJ9. -Source http://localhost:48080/storages/storage-nuget/nuget-releases
 
-The API Key 'eyJhbGciOiJIUzI1NiJ9.' was saved for 'http://localhost:48080/storages/nuget-common-storage/nuget-releases'.
+The API Key 'eyJhbGciOiJIUzI1NiJ9.' was saved for 'http://localhost:48080/storages/storage-nuget/nuget-releases'.
 ```
 
 ## How to build
@@ -124,21 +114,21 @@ Successfully created package 'hello-strongbox-nuget-visual-studio.1.0.0.nupkg'.
 
 Execute the following command:
 ```sh
-nuget push hello-strongbox-nuget-visual-studio.1.0.0.nupkg -Source http://localhost:48080/storages/nuget-common-storage/nuget-releases
+nuget push hello-strongbox-nuget-visual-studio.1.0.0.nupkg -Source http://localhost:48080/storages/storage-nuget/nuget-releases
 ```
 
 The output should be like follows:
 ```log
-Pushing hello-strongbox-nuget-visual-studio.1.0.0.nupkg to 'http://localhost:48080/storages/nuget-common-storage/nuget-releases'...
-PUT http://localhost:48080/storages/nuget-common-storage/nuget-releases
-Created http://localhost:48080/storages/nuget-common-storage/nuget-releases 3153ms
+Pushing hello-strongbox-nuget-visual-studio.1.0.0.nupkg to 'http://localhost:48080/storages/storage-nuget/nuget-releases'...
+PUT http://localhost:48080/storages/storage-nuget/nuget-releases
+Created http://localhost:48080/storages/storage-nuget/nuget-releases 3153ms
 Your package was pushed.
 ```
 ## How to search for NuGet packages in Strongbox repositories
 
 To list the current versions for your packages, execute the following command:
 ```sh
-nuget.exe list -Source http://localhost:48080/storages/nuget-common-storage/nuget-releases
+nuget.exe list -Source http://localhost:48080/storages/storage-nuget/nuget-releases
 ```
 
 The output should be like follows:
@@ -151,7 +141,7 @@ hello-strongbox-nuget-visual-studio 1.0.0
 
 To search a keyword in repository, execute the following command:
 ```sh
-nuget.exe list strongbox -Source http://localhost:48080/storages/nuget-common-storage/nuget-releases
+nuget.exe list strongbox -Source http://localhost:48080/storages/storage-nuget/nuget-releases
 ```
 
 The output should be like follows:
@@ -164,14 +154,14 @@ hello-strongbox-nuget-visual-studio 1.0.0
 
 Execute the following command:
 ```sh
-nuget.exe delete NugetWorld.Hello 1.0.0 -Source http://localhost:48080/storages/nuget-common-storage/nuget-releases
+nuget.exe delete NugetWorld.Hello 1.0.0 -Source http://localhost:48080/storages/storage-nuget/nuget-releases
 ```
 The output should be like follows:
 ```log
-NugetWorld.Hello 1.0.0 will be deleted from the 'http://localhost:48080/storages/nuget-common-storage/nuget-releases'. Would you like to continue? (y/N) y
-WARNING: Deleting NugetWorld.Hello 1.0.0 from the 'http://localhost:48080/storages/nuget-common-storage/nuget-releases'.
-  DELETE http://localhost:48080/storages/nuget-common-storage/nuget-releases/NugetWorld.Hello/1.0.0
-  OK http://localhost:48080/storages/nuget-common-storage/nuget-releases/NugetWorld.Hello/1.0.0 536ms
+NugetWorld.Hello 1.0.0 will be deleted from the 'http://localhost:48080/storages/storage-nuget/nuget-releases'. Would you like to continue? (y/N) y
+WARNING: Deleting NugetWorld.Hello 1.0.0 from the 'http://localhost:48080/storages/storage-nuget/nuget-releases'.
+  DELETE http://localhost:48080/storages/storage-nuget/nuget-releases/NugetWorld.Hello/1.0.0
+  OK http://localhost:48080/storages/storage-nuget/nuget-releases/NugetWorld.Hello/1.0.0 536ms
 NugetWorld.Hello 1.0.0 was deleted successfully.
 ```
 
@@ -228,8 +218,8 @@ Resolving dependency information took 0 ms
 Resolving actions to install package 'hello-strongbox-nuget-visual-studio.1.0.0'
 Resolved actions to install package 'hello-strongbox-nuget-visual-studio.1.0.0'
 Retrieving package 'hello-strongbox-nuget-visual-studio 1.0.0' from 'Strongbox Packages'.
-  GET http://localhost:48080/storages/nuget-common-storage/nuget-releases/download/hello-strongbox-nuget-visual-studio/1.0.0
-  OK http://localhost:48080/storages/nuget-common-storage/nuget-releases/download/hello-strongbox-nuget-visual-studio/1.0.0 195ms
+  GET http://localhost:48080/storages/storage-nuget/nuget-releases/download/hello-strongbox-nuget-visual-studio/1.0.0
+  OK http://localhost:48080/storages/storage-nuget/nuget-releases/download/hello-strongbox-nuget-visual-studio/1.0.0 195ms
 Installing hello-strongbox-nuget-visual-studio 1.0.0.
 Adding package 'hello-strongbox-nuget-visual-studio.1.0.0' to folder 'hello-strongbox-nuget-visual-studio\packages'
 Added package 'hello-strongbox-nuget-visual-studio.1.0.0' to folder 'hello-strongbox-nuget-visual-studio\packages'
@@ -239,8 +229,6 @@ Executing nuget actions took 837,38 ms
 Time Elapsed: 00:00:02.4972295
 ```
 ![Install with Package Manager Console](https://github.com/strongbox/strongbox/wiki/resources%2Fimages%2Fnuget%2FNuGet-Package-Manager-Console.png "Install with Package Manager Console")
-
-
 
 
 # See also:
