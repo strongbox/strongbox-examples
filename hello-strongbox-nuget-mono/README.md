@@ -26,7 +26,7 @@ Go to the root project folder and execute the following commands:
 
 Example below (*there should be no output if success*):
     
-    carlspring@linux-70e2:/home/carlspring/strongbox-examples/hello-strongbox-nuget-mono> mono --runtime=v4.0 nuget.exe config -set DefaultPushSource=http://localhost:48080/storages/nuget-common-storage/nuget-releases -ConfigFile ./.nuget/NuGet.config
+    carlspring@linux-70e2:/home/carlspring/strongbox-examples/hello-strongbox-nuget-mono> mono --runtime=v4.0 nuget.exe config -set DefaultPushSource=http://localhost:48080/storages/storage-nuget/nuget-releases -ConfigFile ./.nuget/NuGet.config
 
 ### Get api key to use with your repository
 
@@ -43,8 +43,8 @@ Strongbox provides the REST API to get an API Key for specified user, you can us
 
 The output should be like follows:
 
-    carlspring@linux-70e2:/home/carlspring/strongbox-examples/hello-strongbox-nuget-mono> mono --runtime=v4.0 nuget.exe setApiKey bXktYXBpLWtleQ== -Source http://localhost:48080/storages/nuget-common-storage/nuget-releases -ConfigFile ./.nuget/NuGet.config
-    The API Key 'bXktYXBpLWtleQ==' was saved for 'http://localhost:48080/storages/nuget-common-storage/nuget-releases'.
+    carlspring@linux-70e2:/home/carlspring/strongbox-examples/hello-strongbox-nuget-mono> mono --runtime=v4.0 nuget.exe setApiKey bXktYXBpLWtleQ== -Source http://localhost:48080/storages/storage-nuget/nuget-releases -ConfigFile ./.nuget/NuGet.config
+    The API Key 'bXktYXBpLWtleQ==' was saved for 'http://localhost:48080/storages/storage-nuget/nuget-releases'.
 
 ### Provide storage authentication (if needed)
 
@@ -56,13 +56,13 @@ Finally, your `NuGet.config` file should look like follows:
     <?xml version="1.0" encoding="utf-8"?>
     <configuration>
       <config>
-        <add key="DefaultPushSource" value="http://localhost:48080/storages/nuget-common-storage/nuget-releases" />
+        <add key="DefaultPushSource" value="http://localhost:48080/storages/storage-nuget/nuget-releases" />
       </config>
       <apikeys>
         <add key="http://localhost:48080/storages/nuget-common-storage/nuget-releases" value="YpDSPr0yOqTjEPuaG6+aTOV6QJWI0X4MliV/yARLTZXb4cb55LaZF8jOhWvg+Zqnkn8ykhHtj3byEwKL60GWbsaeZZJdPHeP4OgFftPSmGkJSovyMRh1bbATPi6hx6eRpquP8daWKhfAvca0RjnPA22s3KtcdDlI3dV6IQzTLOfANkdmyhH95A+LHc51BXQKVWQPJ6B94TEBonEqWIt2bNti66Pd4sbDvKZJAA1GRjDprFxukg4EUz8YD++JYWP6X+BNCu2jYNXBS6tbw6Zx1o9HwOd/9eUC+1lP9Sbvj4tGSB/D5MwKhNabKwElhjikDNg5TaI4Il6R3sw9zJXyDdsGIfpKg4ICwBt6suuqEOQZQIWJKum3NuFYOocke6BsHpHC2Iz/hMkCjQz3v8DNaKLU+9pr6qOOaEsfyJCkj313AWxigkHqKcFMlJPfhGcUjZX6wq1vmPMO2erYBiE89IFCdAadBWpB2J6s79YoWwb5Elvf7SiLlU6lDEq9D8mOQLTeWrEkoD3S9h/CiV2qug==" />
       </apikeys>
       <packageSources>
-        <add key="strongbox" value="http://localhost:48080/storages/nuget-common-storage/nuget-releases" />
+        <add key="strongbox" value="http://localhost:48080/storages/storage-nuget/nuget-releases" />
       </packageSources>
       <packageSourceCredentials>
         <strongbox>
@@ -101,7 +101,7 @@ Execute the following command:
 The output should be like follows:
 
     carlspring@linux-70e2:/home/carlspring/strongbox-examples/hello-strongbox-nuget-mono> mono --runtime=v4.0 nuget.exe push ./Org.Carlspring.Strongbox.Examples.Nuget.Mono.1.0.nupkg -ConfigFile ./.nuget/NuGet.config
-    Pushing Org.Carlspring.Strongbox.Examples.Nuget.Mono 1.0 to 'http://localhost:48080/storages/nuget-common-storage/nuget-releases'...
+    Pushing Org.Carlspring.Strongbox.Examples.Nuget.Mono 1.0 to 'http://localhost:48080/storages/storage-nuget/nuget-releases'...
     Your package was pushed.
 
 ## How to search for NuGet packages in Strongbox repositories
@@ -124,10 +124,10 @@ Execute the following command:
 The output should be like follows:
 
     carlspring@linux-70e2:/home/carlspring/strongbox-examples/hello-strongbox-nuget-mono> mono --runtime=v4.0 nuget-4_1_0.exe delete Org.Carlspring.Strongbox.Examples.Nuget.Mono 1.0.1 -Source strongbox -ConfigFile ./.nuget/NuGet.config
-    Org.Carlspring.Strongbox.Examples.Nuget.Mono 1.0.1 will be deleted from the 'http://localhost:48080/storages/nuget-common-storage/nuget-releases'. Would you like to continue? (y/N) y
-    WARNING: Deleting Org.Carlspring.Strongbox.Examples.Nuget.Mono 1.0.1 from the 'http://localhost:48080/storages/nuget-common-storage/nuget-releases'.
-    DELETE http://localhost:48080/storages/nuget-common-storage/nuget-releases/Org.Carlspring.Strongbox.Examples.Nuget.Mono/1.0.1
-    OK http://localhost:48080/storages/nuget-common-storage/nuget-releases/Org.Carlspring.Strongbox.Examples.Nuget.Mono/1.0.1 7277ms
+    Org.Carlspring.Strongbox.Examples.Nuget.Mono 1.0.1 will be deleted from the 'http://localhost:48080/storages/storage-nuget/nuget-releases'. Would you like to continue? (y/N) y
+    WARNING: Deleting Org.Carlspring.Strongbox.Examples.Nuget.Mono 1.0.1 from the 'http://localhost:48080/storages/storage-nuget/nuget-releases'.
+    DELETE http://localhost:48080/storages/storage-nuget/nuget-releases/Org.Carlspring.Strongbox.Examples.Nuget.Mono/1.0.1
+    OK http://localhost:48080/storages/storage-nuget/nuget-releases/Org.Carlspring.Strongbox.Examples.Nuget.Mono/1.0.1 7277ms
     Org.Carlspring.Strongbox.Examples.Nuget.Mono 1.0.1 was deleted successfully.
 
 # See also:
