@@ -23,14 +23,14 @@ To manage packages, you'll need to configure NuGet to acccess your storages by p
 
 ![NuGet Package Resources](https://github.com/strongbox/strongbox/wiki/resources%2Fimages%2Fnuget%2FNuGet-Package-Resources.png "Add new NuGet Package Resources")
 
-* You can not deploy to group repositories as they are only for resolving artifacts. Also, the group includes the nuget.org repository itself
+* You cannot deploy to group repositories, as they are only for resolving artifacts. Also, please note that the `nuget-public` group includes the `nuget.org` repository itself
 * The URL when deploying artifacts is the one for the hosted repository (`nuget-releases`, `nuget-snapshot`, etc)
 
 
 
 ### Get api key to use with your repository
 
-NuGet protocol assumes that users need to be authenticated with `API Key` to be able to deploy or delete your packages.
+The NuGet protocol assumes that users need to be authenticated with `API Key` to be able to deploy or delete your packages.
 Strongbox provides the REST API to get an API Key for specified user, you can use a browser for this like follows:
     
     http://localhost:48080/users/user/admin/generate-security-token
