@@ -19,8 +19,13 @@ To manage packages, you'll need to configure NuGet to acccess your storages by p
     1. In Visual Studio Go to Tools --> Nuget Package Manager --> Package Manager Settings
     2. Select Package Sources  in the navigation menu
     3. To add a source, select +, edit the name, enter the URL or path in the Source control, and select Update. The source now appears in the selector drop-down.
+    4. The strongbox repository should be at top
 
 ![NuGet Package Resources](https://github.com/strongbox/strongbox/wiki/resources%2Fimages%2Fnuget%2FNuGet-Package-Resources.png "Add new NuGet Package Resources")
+
+* You can not deploy to group repositories and that they are only for resolving artifact that the group includes the nuget.org repository itself
+* The URL when deploying artifacts is the one for the hosted repository (`nuget-releases`, `nuget-snapshot`, etc)
+
 
 
 ### Get api key to use with your repository
@@ -149,6 +154,8 @@ The output should be like follows:
 hello-strongbox-nuget-visual-studio 1.0.0
 ```
 
+For example, you can look up log4net like this:
+![Search log4net](https://github.com/strongbox/strongbox/wiki/resources%2Fimages%2Fnuget%2FNuGet-log4net.png "Search result with Strongbox NuGet Layout provider)
 
 ## How to delete a NuGet package
 
