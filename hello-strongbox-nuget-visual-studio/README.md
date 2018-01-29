@@ -155,7 +155,7 @@ hello-strongbox-nuget-visual-studio 1.0.0
 ```
 
 For example, you can look up log4net like this:
-![Search log4net](https://github.com/strongbox/strongbox/wiki/resources%2Fimages%2Fnuget%2FNuGet-log4net.png "Search result with Strongbox NuGet Layout provider)
+![Search log4net](https://github.com/strongbox/strongbox/wiki/resources%2Fimages%2Fnuget%2FNuGet-Package-log4net.png "Search result with Strongbox NuGet Layout provider")
 
 ## How to delete a NuGet package
 
