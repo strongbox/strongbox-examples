@@ -16,10 +16,10 @@ nuget <command> -Source http://localhost:48080/storages/storage-nuget/nuget-rele
 ### Add your repository to NuGet package sources
 To manage packages, you'll need to configure NuGet to acccess your storages by performing following steps:
 
-    1. In Visual Studio Go to Tools --> Nuget Package Manager --> Package Manager Settings
-    2. Select Package Sources  in the navigation menu
-    3. To add a source, select +, edit the name, enter the URL or path in the Source control, and select Update. The source now appears in the selector drop-down.
-    4. The strongbox goup repository should be at the top of the list.
+1. In Visual Studio Go to Tools --> Nuget Package Manager --> Package Manager Settings
+2. Select Package Sources  in the navigation menu
+3. To add a source, select +, edit the name, enter the URL or path in the Source control, and select Update. The source now appears in the selector drop-down.
+4. The strongbox group repository should be at the top of the list.
 
 ![NuGet Package Resources](https://github.com/strongbox/strongbox/wiki/resources%2Fimages%2Fnuget%2FNuGet-Package-Resources.png "Add new NuGet Package Resources")
 
