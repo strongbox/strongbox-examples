@@ -33,7 +33,7 @@ To manage packages, you'll need to configure NuGet to acccess your storages by p
 The NuGet protocol assumes that users need to be authenticated with `API Key` to be able to deploy or delete your packages.
 Strongbox provides the REST API to get an API Key for specified user, you can use a browser for this like follows:
     
-    http://localhost:48080/users/user/admin/generate-security-token
+    http://localhost:48080/api/users/admin/generate-security-token
 
 Enter your Strongbox credentials. (Default: admin:password)
 
