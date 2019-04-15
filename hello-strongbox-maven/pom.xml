@@ -9,6 +9,8 @@
     <artifactId>hello-strongbox-maven</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <inceptionYear>2019</inceptionYear>
+
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
