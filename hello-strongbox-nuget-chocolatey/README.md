@@ -3,8 +3,9 @@ This is an example of how to use the Strongbox artifact repository manager with 
 ## Pre-requisites
 The following is a minimal configuration in order to be able to use this tutorial:
 
-* `Windows`
 * `Chocolatey`
+
+Chocolatey is available natively on Windows, running on Mono, or in Docker. Currently, for both Mono and Docker, only source code is available, see https://github.com/chocolatey/choco for build instructions. Additionally, for the short term, you may want to build using https://github.com/chocolatey/choco/pull/1827 until it is merged into master as master uses a old version of Mono.
 
 It is OK to ignore warnings about a system reboot being requested since the nothing here is affected by it.
 
