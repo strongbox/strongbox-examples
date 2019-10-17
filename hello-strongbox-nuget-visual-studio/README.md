@@ -21,7 +21,7 @@ To manage packages, you'll need to configure NuGet to acccess your storages by p
 3. To add a source, select +, edit the name, enter the URL or path in the Source control, and select Update. The source now appears in the selector drop-down.
 4. The `nuget-public` group repository should be at the top of the list.
 
-![NuGet Package Resources](https://github.com/strongbox/strongbox/wiki/resources%2Fimages%2Fnuget%2FNuGet-Package-Resources.png "Add new NuGet Package Resources")
+![NuGet Package Resources](https://strongbox.github.io/assets/images/NuGet-Package-Resources.png "Add new NuGet Package Resources")
 
 * You cannot deploy to group repositories, as they are only for resolving artifacts. Also, please note that the `nuget-public` group includes the `nuget.org` repository itself
 * The URL when deploying artifacts is the one for the hosted repository (`nuget-releases`, `nuget-snapshot`, etc)
@@ -155,7 +155,7 @@ hello-strongbox-nuget-visual-studio 1.0.0
 ```
 
 For example, you can look up log4net like this:
-![Search log4net](https://github.com/strongbox/strongbox/wiki/resources%2Fimages%2Fnuget%2FNuGet-Package-log4net.png "Search result with Strongbox NuGet Layout provider")
+![Search log4net](https://strongbox.github.io/assets/images/NuGet-Package-log4net.png "Search result with Strongbox NuGet Layout provider")
 
 ## How to delete a NuGet package
 
@@ -175,17 +175,17 @@ NugetWorld.Hello 1.0.0 was deleted successfully.
 ## How to install a NuGet package with Visual Studio Nuget Manager
 Open your project in Visual Studio and in Solution Explorer, right-click either References or a project and select Manage NuGet Packages.
 
-![Manage NuGet Packages](https://github.com/strongbox/strongbox/wiki/resources%2Fimages%2Fnuget%2FNuGet-Manage-Packages.png "Manage NuGet Packages")
+![Manage NuGet Packages](https://strongbox.github.io/assets/images/NuGet-Manage-Packages.png "Manage NuGet Packages")
 
 You should switch to StrongBox repository in source tab and search for the package that you built in previous steps. 
 
-![Switch to Strongbox Repo](https://github.com/strongbox/strongbox/wiki/resources%2Fimages%2Fnuget%2FNuGet-Switch-Repository.png "Switch to Strongbox Repo")
+![Switch to Strongbox Repo](https://strongbox.github.io/assets/images/NuGet-Switch-Repository.png "Switch to Strongbox Repo")
 
 
 
 Search for the NuGet package, select and install the version that is available.
 
-![Install NuGet Package](https://github.com/strongbox/strongbox/wiki/resources%2Fimages%2Fnuget%2FNuGet-Search-Repository.png "Install NuGet Package")
+![Install NuGet Package](https://strongbox.github.io/assets/images/NuGet-Search-Repository.png "Install NuGet Package")
 
 
 You can check that all of the dependencies are installed that you packed in [How to make NuGet package](#How-to-make-NuGet-package) section.
@@ -235,7 +235,7 @@ Successfully installed 'hello-strongbox-nuget-visual-studio 1.0.0' to hello-stro
 Executing nuget actions took 837,38 ms
 Time Elapsed: 00:00:02.4972295
 ```
-![Install with Package Manager Console](https://github.com/strongbox/strongbox/wiki/resources%2Fimages%2Fnuget%2FNuGet-Package-Manager-Console.png "Install with Package Manager Console")
+![Install with Package Manager Console](https://strongbox.github.io/assets/images/NuGet-Package-Manager-Console.png "Install with Package Manager Console")
 
 
 # See also:
