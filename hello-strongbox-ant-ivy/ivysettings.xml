@@ -3,7 +3,7 @@
     <settings defaultResolver="maven-central" defaultConflictManager="all" />
     
     <resolvers>
-        <ibiblio name="maven-central" root="http://localhost:48080/storages/storage0/maven-central" m2compatible="true" usepoms="true" />
+        <ibiblio name="maven-central"  m2compatible="true" usepoms="true" />
         <ibiblio name="releases" root="http://localhost:48080/storages/storage0/releases" m2compatible="true" usepoms="true" />
         <ibiblio name="snapshots" root="http://localhost:48080/storages/storage0/snapshots" m2compatible="true"
                  checkmodified="true"
