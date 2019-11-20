@@ -1,0 +1,1 @@
+This is an example project illustrating how to use the Strongbox artifact repository manager with pip.
