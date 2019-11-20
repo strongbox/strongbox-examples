@@ -73,10 +73,6 @@ Uploading distributions to https://test.pypi.org/legacy/
 
  python3 -m pip install --index-url https://test.pypi.org/simple/ --no-deps hello_world_pypi
 Looking in indexes: https://test.pypi.org/simple/
-Requirement already satisfied:
 
-                                                                     python3           
-Python 3.7.5 (default, Nov 20 2019, 14:31:40) 
-[Clang 9.0.0 (clang-900.0.39.2)] on darwin
-Type "help", "copyright", "credits" or "license" for more information.
->>> import hello_world_pypi
+
+[Python Packages User Guide](https://docs.python.org/3/distributing/index.html#publishing-python-packages)                                            
