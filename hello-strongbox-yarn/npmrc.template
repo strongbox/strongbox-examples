@@ -1,0 +1,10 @@
+registry=http://localhost:48080/storages/storage-npm/npm-releases
+always-auth=true
+email=someuser@example.com
+_auth=YWRtaW46cGFzc3dvcmQ=
+
+
+; `_auth` is base64 encoded authentication token
+; you can use it instead of `username=admin` and `_password=password` 
+;_auth = dXNlcjpwYXNzd29yZA==
+
