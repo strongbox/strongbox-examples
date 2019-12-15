@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 setup(
     name="hello_world_pypi",
     packages = ['hello_world_pypi'],
-    license='MIT',
+    license='Apache 2.0',
     version="1.3",
     author="Ankit Tomar",
     author_email="dummy@gmail.com",
@@ -19,7 +19,7 @@ setup(
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
         "Programming Language :: Python :: 3",
-        'License :: OSI Approved :: MIT License',
+        'License :: Apache License :: Version 2.0',
         "Operating System :: OS Independent",
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.4',
