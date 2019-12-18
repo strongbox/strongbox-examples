@@ -4,12 +4,12 @@
     <servers>
         <server>
             <id>releases</id>
-            <username>maven</username>
+            <username>admin</username>
             <password>password</password>
         </server>
         <server>
             <id>snapshots</id>
-            <username>maven</username>
+            <username>admin</username>
             <password>password</password>
         </server>
     </servers>
