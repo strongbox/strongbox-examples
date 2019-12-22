@@ -7,11 +7,11 @@ setup(
     name="hello_world_pypi",
     packages = ['hello_world_pypi'],
     license='Apache 2.0',
-    version="1.3",
+    version="1.9",
     author="Ankit Tomar",
     author_email="dummy@gmail.com",
     description="Sample Hello world package",
-    long_description=long_description,
+    long_description="This is long description",
     long_description_content_type="text/markdown",
     url="https://github.com/anki2189/strongbox-examples",
     keywords = ['Hello', 'world', 'pypi'],
@@ -27,6 +27,6 @@ setup(
         'Programming Language :: Python :: 3.6',
     ],
     install_requires=[
-        'time',
+        'pip-hello-world',
     ],
 )
