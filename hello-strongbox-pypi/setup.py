@@ -4,10 +4,10 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(
-    name="hello_world_pypi",
-    packages = ['hello_world_pypi'],
+    name="hello-world-pypi",
+    packages = ['hello-world-pypi'],
     license='Apache 2.0',
-    version="1.9",
+    version="1.0.0",
     author="Ankit Tomar",
     author_email="dummy@gmail.com",
     description="Sample Hello world package",
@@ -19,7 +19,6 @@ setup(
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
         "Programming Language :: Python :: 3",
-        'License :: Apache License :: Version 2.0',
         "Operating System :: OS Independent",
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.4',
