@@ -1,14 +1,8 @@
 [distutils]
 index-servers=
   strongbox
-  testpypi
 
 [strongbox]
 repository: http://localhost:48080/storages/storage-pypi/pypi-releases
-username: admin
-password: password
-
-[testpypi]
-repository: https://test.pypi.org/legacy/
 username: admin
 password: password
