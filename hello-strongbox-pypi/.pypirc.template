@@ -1,0 +1,8 @@
+[distutils]
+index-servers=
+  strongbox
+
+[strongbox]
+repository: http://localhost:48080/storages/storage-pypi/pypi-releases
+username: admin
+password: password
