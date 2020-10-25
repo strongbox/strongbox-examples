@@ -1,3 +1,7 @@
+plugins {
+    id("maven-publish")
+}
+
 apply plugin: 'java'
 apply plugin: 'maven'
 
@@ -9,8 +13,37 @@ compileJava {
 
 description = "Example project that shows how to use gradle to build and deploy artifacts to Strongbox"
 
-ext.username = System.getProperty('credentials.username') != null ? System.getProperty('credentials.username') : mavenUser
-ext.password = System.getProperty('credentials.password') != null ? System.getProperty('credentials.password') : mavenPassword
+// publishing to GitHub Package Registry
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/strongbox/strongbox-examples")
+            credentials {
+                // GITHUB_USERNAME is automatically provived by the actions/setup-java action
+                username = project.findProperty("gpr.user") ?: System.getenv("GITHUB_USERNAME")
+                // GITHUB_TOKEN is automatically provived by GitHub for every repository
+                password = project.findProperty("gpr.key") ?: System.getenv("GITHUB_TOKEN")
+            }
+        }
+    }
+    publications {
+        gpr(MavenPublication) {
+            pom {
+                description = "Example project that shows how to use gradle to build and deploy artifacts to Strongbox"
+            }
+
+            groupId = "org.carlspring.strongbox.examples"
+            artifactId = "hello-strongbox-gradle"
+            version = "1.0-SNAPSHOT"
+
+            from components.java
+        }
+    }
+}
+
+ext.username = System.getProperty('credentials.username') != null ? System.getProperty('credentials.username') : "maven"
+ext.password = System.getProperty('credentials.password') != null ? System.getProperty('credentials.password') : "password"
 
 configurations {
     deployerJars
@@ -33,7 +66,7 @@ uploadArchives {
     repositories.mavenDeployer {
             configuration = configurations.deployerJars
             repository(url: "http://localhost:48080/storages/storage0/snapshots/") {
-                authentication(userName: usernams, password: password)
+                authentication(userName: username, password: password)
             }
             pom.groupId = "org.carlspring.strongbox.examples"
             pom.artifactId = "hello-strongbox-gradle"
