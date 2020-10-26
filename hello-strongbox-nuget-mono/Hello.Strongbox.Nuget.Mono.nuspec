@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
+<!-- See nuspec file reference for full package metadata info - https://docs.microsoft.com/en-us/nuget/reference/nuspec -->
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
 	<metadata>
 		<id>Org.Carlspring.Strongbox.Examples.Nuget.Mono</id>
@@ -6,13 +7,14 @@
 		<authors>Sergey Bespalov</authors>
 		<owners>Carlspring Consulting &amp; Development Ltd.</owners>
 		<licenseUrl>https://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
-		<projectUrl>https://github.com/strongbox/strongbox-examples/
-		</projectUrl>
+		<projectUrl>https://github.com/strongbox/strongbox-examples/</projectUrl>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<description>Strongbox Nuget Example</description>
 		<tags>mono strongbox nuget</tags>
+        <!-- required for publishing to GitHub Package Registry	-->
+		<repository type="git" url="https://github.com/strongbox/strongbox-examples.git" />
 	</metadata>
 	<files>
-		<file src="bin/*.dll" target="lib" /> 
+		<file src="HelloWorld.dll" target="lib" />
 	</files>
 </package>

@@ -2,6 +2,36 @@ name: Publish strongbox-examples to the GitHub Package Registry
 on:
   [ push ]
 jobs:
+  publish-hello-strongbox-nuget-choco:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '3.1.x'
+          source-url: https://nuget.pkg.github.com/strongbox/index.json
+        env:
+          NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: nuget pack ./hello-chocolatey.nuspec
+        working-directory: 'hello-strongbox-nuget-chocolatey/hello-chocolatey'
+      - run: nuget push *.nupkg -SkipDuplicate
+        working-directory: 'hello-strongbox-nuget-chocolatey/hello-chocolatey'
+  publish-hello-strongbox-nuget-mono:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '3.1.x'
+          source-url: https://nuget.pkg.github.com/strongbox/index.json
+        env:
+          NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: mcs -t:library -out:HelloWorld.dll ./src/HelloWorld.cs
+        working-directory: 'hello-strongbox-nuget-mono'
+      - run: nuget pack ./Hello.Strongbox.Nuget.Mono.nuspec
+        working-directory: 'hello-strongbox-nuget-mono'
+      - run: nuget push *.nupkg -SkipDuplicate
+        working-directory: 'hello-strongbox-nuget-mono'
   publish-hello-strongbox-gradle:
     runs-on: ubuntu-latest
     steps:
@@ -30,7 +60,13 @@ jobs:
           scope: '@strongbox'
       - run: npm install
         working-directory: 'hello-strongbox-npm'
-      - run: npm publish
+      - run: |
+          if [[ -z $(npm info @strongbox/hello-strongbox-npm 2> /dev/null) ]]; then
+            npm publish
+          else
+            echo "package already exists in registry, skipping publish step..."
+          fi
+        shell: bash
         working-directory: 'hello-strongbox-npm'
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
