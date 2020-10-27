@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(
-    name="hello-world-pypi",
+    name="hello-strongbox-pypi",
     packages = ['hello-world-pypi'],
     license='Apache 2.0',
     version="1.0.0",
@@ -13,8 +13,8 @@ setup(
     description="Sample Hello world package",
     long_description="This is long description",
     long_description_content_type="text/markdown",
-    url="https://github.com/anki2189/strongbox-examples",
-    keywords = ['Hello', 'world', 'pypi'],
+    url="https://github.com/strongbox/strongbox-examples",
+    keywords = ['strongbox', 'pypi'],
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
