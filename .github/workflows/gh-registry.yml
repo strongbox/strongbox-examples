@@ -72,3 +72,18 @@ jobs:
         working-directory: 'hello-strongbox-npm'
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  publish-hello-strongbox-sbt:
+    runs-on: ubuntu-latest
+    container:
+      image: strongboxci/alpine:jdk8-mvn3.6-sbt1.3
+      # Note: GitHub Actions must be run by the default Docker user (root).
+      # see https://docs.github.com/en/free-pro-team@latest/actions/reference/specifications-for-github-hosted-runners#docker-container-filesystem
+      options: --user 0
+    steps:
+      - uses: actions/checkout@v2
+      # generate GitHub Package Registry ci-friendly version to avoid collision
+      - run: echo "GPR_VERSION=$(date '+%Y%m%d.%H%M')" >> $GITHUB_ENV
+      - run: sbt -Dgpr.version=$GPR_VERSION publish
+        working-directory: 'hello-strongbox-sbt'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
