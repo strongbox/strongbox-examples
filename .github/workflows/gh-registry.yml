@@ -2,6 +2,22 @@ name: Publish strongbox-examples to the GitHub Package Registry
 on:
   [ push ]
 jobs:
+  publish-hello-strongbox-gradle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+      - run: gradle build
+        working-directory: 'hello-strongbox-gradle'
+      # generate GitHub Package Registry ci-friendly version to avoid collision
+      - run: echo "GPR_VERSION=$(date '+%Y%m%d.%H%M')" >> $GITHUB_ENV
+      - run: gradle -Pgpr.version=$GPR_VERSION publish
+        working-directory: 'hello-strongbox-gradle'
+        env:
+          GITHUB_USERNAME: ${{ github.actor }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   publish-hello-strongbox-nuget-choco:
     runs-on: ubuntu-latest
     steps:
@@ -32,20 +48,6 @@ jobs:
         working-directory: 'hello-strongbox-nuget-mono'
       - run: nuget push *.nupkg -SkipDuplicate
         working-directory: 'hello-strongbox-nuget-mono'
-  publish-hello-strongbox-gradle:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-java@v1
-        with:
-          java-version: 1.8
-      - run: gradle build
-        working-directory: 'hello-strongbox-gradle'
-      - run: gradle publish
-        working-directory: 'hello-strongbox-gradle'
-        env:
-          GITHUB_USERNAME: ${{ github.actor }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   publish-hello-strongbox-npm:
     runs-on: ubuntu-latest
     steps:
