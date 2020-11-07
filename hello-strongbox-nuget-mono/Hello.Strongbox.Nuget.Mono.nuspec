@@ -2,7 +2,7 @@
 <!-- See nuspec file reference for full package metadata info - https://docs.microsoft.com/en-us/nuget/reference/nuspec -->
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
 	<metadata>
-		<id>Org.Carlspring.Strongbox.Examples.Nuget.Mono</id>
+		<id>hello-strongbox-nuget-mono</id>
 		<version>1.0.0</version>
 		<authors>Sergey Bespalov</authors>
 		<owners>Carlspring Consulting &amp; Development Ltd.</owners>
