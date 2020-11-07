@@ -13,6 +13,12 @@ compileJava {
 
 description = "Example project that shows how to use gradle to build and deploy artifacts to Strongbox"
 
+// GPR-friendly artifact version when deploying to GitHub Package Registry
+// The version string is generated via a GitHub action that deploys the artifact to the GitHub Package Registry
+// This is necessary as GitHub does not support overriding of published artifacts
+// See https://docs.github.com/en/free-pro-team@latest/packages/publishing-and-managing-packages/deleting-a-package#about-public-package-deletion
+ext.gprVersion = project.findProperty("gpr.version") ?: "1.0-SNAPSHOT"
+
 // publishing to GitHub Package Registry
 publishing {
     repositories {
@@ -20,9 +26,9 @@ publishing {
             name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/strongbox/strongbox-examples")
             credentials {
-                // GITHUB_USERNAME is automatically provived by the actions/setup-java action
+                // GITHUB_USERNAME is automatically provided by the actions/setup-java action
                 username = project.findProperty("gpr.user") ?: System.getenv("GITHUB_USERNAME")
-                // GITHUB_TOKEN is automatically provived by GitHub for every repository
+                // GITHUB_TOKEN is automatically provided by GitHub for every repository
                 password = project.findProperty("gpr.key") ?: System.getenv("GITHUB_TOKEN")
             }
         }
@@ -35,7 +41,7 @@ publishing {
 
             groupId = "org.carlspring.strongbox.examples"
             artifactId = "hello-strongbox-gradle"
-            version = "1.0-SNAPSHOT"
+            version = gprVersion
 
             from components.java
         }
